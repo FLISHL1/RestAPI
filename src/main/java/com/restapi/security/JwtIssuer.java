@@ -12,11 +12,12 @@ import java.util.List;
 
 @Component
 public class JwtIssuer {
-    public String issue(Long userId){
+    public String issue(Long userId, String username, List<String> roles){
         return JWT.create()
                 .withSubject(String.valueOf(userId))
                 .withExpiresAt(Instant.now().plus(Duration.of(1, ChronoUnit.DAYS)))
-//                .withClaim("rol", roles)
+                .withClaim("u", username)
+                .withClaim("rol", roles)
                 .sign(Algorithm.HMAC256("secret"));
 
     }

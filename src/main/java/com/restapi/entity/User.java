@@ -1,5 +1,6 @@
 package com.restapi.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -22,9 +23,10 @@ public class User implements UserDetails {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String username;
+    @JsonIgnore
     private String password;
     @ManyToMany(fetch = FetchType.EAGER)
-    private Set<Role> roles;
+    private Collection<Role> roles;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
