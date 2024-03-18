@@ -11,6 +11,7 @@
    - ROLE_USERS: Доступ ко `/users/**`
  - POST, GET, PATCH, PUT, DELETE запросы для сервиса [jsonplaceholder](jsonplaceholder.typicode.com)
  - Запросы с фильтрацией или ограниченями (возможности [jsonplaceholder](jsonplaceholder.typicode.com))
+   
 Планируется до реализовать:
  - Кэширование запросов
  - Логирование
