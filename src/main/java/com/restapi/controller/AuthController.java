@@ -25,7 +25,6 @@ public class AuthController {
     }
     @PostMapping("/signup")
     public ResponseEntity<String> signUp(@RequestBody @Validated LoginRequest req){
-        System.out.println(req);
         return new ResponseEntity<>(authService.attemptSignUp(req), HttpStatus.OK);
     }
 }
